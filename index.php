@@ -25,7 +25,14 @@ include_once __DIR__ . '/classes/Salario.php';
             <h2>Anni : <?php echo $person -> age; ?></h2>
             <h2>Matricola : <?php echo $person -> IdDipendente; ?></h2>
             <h2>Anno Assunzione : <?php echo $person -> AnnoAssunzione; ?></h2>
-            <h2>Anno Licenziamento : <?php echo $person -> AnnoLicenziamento; ?></h2>
+            <h2>Anno Licenziamento : 
+                <?php try {
+                    echo $person->job($person->AnnoLicenziamento);
+                } catch (Exception $e) {
+                    echo $e->getMessage();
+                }
+                ?>
+            </h2>
             <h2>Numero Familiari : <?php echo $person -> NumFamiliari; ?></h2>
             <h2>Stipendio Lordo : <?php echo $person -> StipLordo; ?></h2>
         </li>

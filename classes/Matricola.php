@@ -23,4 +23,16 @@ class Matricola extends Persona {
     }
 
     //method
+      //method
+    public function job($_AnnoLicenziamento) {
+        if(is_int($this->AnnoLicenziamento)) {
+            throw new Exception ('Dipendete Licenziato');
+        } else if (! is_int($this->AnnoLicenziamento)) {
+            throw new Exception ('Dipendente non licenziato');
+        }
+        return $_AnnoLicenziamento;
+    }
 }
+
+
+

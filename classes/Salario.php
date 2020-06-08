@@ -17,23 +17,6 @@ class Salario extends Matricola {
     }
 
 
-    //method
-    public function job($anno) {
-        if(! is_int($anno)) {
-            throw new Exception ('Dipendete Licenziato');
-        } else if (is_int($anno)) {
-            throw new Exception ('Dipendente non licenziato');
-        }
-    }
-}
-
-$mt = new Salario('Michele', 'Rossi', 28, '0620', 1988, 'Null', 4, 2800);
-
-
-try {
-    echo $mt->job(2000) . '<br>';
-} catch (Exception $e) {
-    echo 'Messaggio: ' . $e->getMessage() . '<br>';
 }
 
 $dipendenti = [
